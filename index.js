@@ -10,7 +10,7 @@ let getUserHome = () => {
     return process.env[isWindow() ? 'USERPROFILE' : 'HOME'];
 };
 
-let open = (p) => isWindow() ? exec(`start "${p}"`) : exec(`open "${p}"`);
+let open = (p) => isWindow() ? exec(`start ${p}`) : exec(`open ${p}`);
 
 module.exports = {
     getUserHome,
