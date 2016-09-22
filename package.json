@@ -24,6 +24,8 @@
     "homepage": "https://github.com/LoveKino/system-tool#readme",
     "link_dependencies": {},
     "dependencies": {
+        "cl-requestor": "0.0.3",
+        "del": "^2.2.2",
         "mz": "^2.4.0"
     },
     "devDependencies": {
