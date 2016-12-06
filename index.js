@@ -32,6 +32,16 @@ let existsFile = (filePath) => {
     });
 };
 
+let existsDir = (filePath) => {
+    return new Promise((resolve) => {
+        stat(filePath).then((statObj) => {
+            resolve(statObj.isDirectory());
+        }).catch(() => {
+            resolve(false);
+        });
+    });
+};
+
 let download = (type, opts, target, {
     progress
 } = {}) => {
@@ -74,5 +84,6 @@ module.exports = {
     open,
     isWindow,
     existsFile,
+    existsDir,
     download
 };
