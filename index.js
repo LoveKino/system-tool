@@ -14,6 +14,8 @@ let fs = require('fs');
 
 let del = require('del');
 
+var s_mkdirp = require('mkdirp');
+
 let isWindow = () => process.platform === 'win32';
 
 let getUserHome = () => {
@@ -41,6 +43,14 @@ let existsDir = (filePath) => {
         });
     });
 };
+
+let mkdirp = (p, opts = {}) => new Promise((resolve, reject) => s_mkdirp(p, opts, function(err) {
+    if (err) {
+        reject(err);
+    } else {
+        resolve();
+    }
+}));
 
 let download = (type, opts, target, {
     progress
@@ -85,5 +95,6 @@ module.exports = {
     isWindow,
     existsFile,
     existsDir,
-    download
+    download,
+    mkdirp
 };

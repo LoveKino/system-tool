@@ -1,6 +1,6 @@
 {
     "name": "system-tool",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "tool library for system programming",
     "main": "index.js",
     "scripts": {
